@@ -20,7 +20,7 @@ steps:
     npm run build
     npm install -g newman
     npm install -g newman-reporter-html
-    newman run "postman/collections/Customers_ac36c10f-5979-4bb1-9ffe-55b0581f2119.json" -e "postman/Policyholder-Mock.postman_environment.json" --reporters cli,html
+    newman run "postman/collections/Policyholder%20360_264d9ebf-93ef-4f59-899c-224d7ec0cee8.json" -e "postman/Policyholder-Mock.postman_environment.json" --reporters cli,html
   displayName: 'build with newman'
 - task: CopyFiles@2
   inputs:
