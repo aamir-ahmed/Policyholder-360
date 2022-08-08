@@ -1,0 +1,35 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '10.x'
+  displayName: 'Install Node.js'
+
+- script: |
+    npm install
+    npm run build
+    npm install -g newman
+    npm install -g newman-reporter-html
+    newman run "postman/collections/Customers_ac36c10f-5979-4bb1-9ffe-55b0581f2119.json" -e "postman/Policyholder-Mock.postman_environment.json" --reporters cli,html
+  displayName: 'build with newman'
+- task: CopyFiles@2
+  inputs:
+    targetFolder: '$(Build.ArtifactStagingDirectory)'
+# Publish build artifacts
+# Publish build artifacts to Azure Pipelines or a Windows file share
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathToPublish: '$(Build.ArtifactStagingDirectory)'
+    artifactName: 'Report'
+    publishLocation: 'Container'
+    #targetPath: # Required when publishLocation == FilePath
