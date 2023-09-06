@@ -1,9 +1,10 @@
 {
 	"info": {
-		"_postman_id": "d26aa3a0-815f-47fb-bea0-601fb137af32",
+		"_postman_id": "154370d8-6eed-40f6-9f8d-b9738f1c726b",
 		"name": "Policyholder-360",
 		"description": "This API is designed to show how you might mock, test document a new API. In this case, we're assuming that we're going to create a basic user management API.\n\nIt has basic CRUD operations listed below.\n\nHit the \"Run in Postman\" button to see the pre-request and test scripts powering this collection.\n\nTry running the collection through the Collection Runner to see how the mock allows us to scope out all our responses and write our tests in advance.\n\n## Summary\n\nHaving undergone the effort of building out our collection in Postman first:\n\n- Using Postman Mocks\n- Writing tests\n \nThis has allowed us to then build out our API to match, meaning we could:\n(Update the `url` in the environment to `http://localhost:3000` and run the following Node API: https://github.com/matt-ball/users-api)\n\n- Debug our API as it was being built\n- Ensure parity with our mocks, meeting the designed blueprint\n- Run tests against the API as it was being built so that it's watertight\n\nAs a result:\n\n- We now have a shareable collection for our API\n- We have beautiful, rich documentation showing how it works\n- We can run our collection in a fully automated fashion and attach it to our CI/CD pipeline\n- We can create a Postman Monitor with no added effort to check for responsiveness and correctness",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "16863297-154370d8-6eed-40f6-9f8d-b9738f1c726b"
 	},
 	"item": [
 		{
@@ -12,7 +13,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "fea90455-8a9c-492d-8a91-95b636f9ac43",
+						"id": "400956e7-204a-4c92-baa1-c43020b7fc2a",
 						"exec": [
 							"const res = pm.response.json();",
 							"const id = res.id;",
@@ -60,7 +61,7 @@
 					}
 				}
 			],
-			"id": "67c11b4f-16cd-47ca-a707-57319e1d3fba",
+			"id": "45100adb-729f-47e1-952b-5fa629c35a9e",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -105,7 +106,7 @@
 			},
 			"response": [
 				{
-					"id": "6e52881a-8eb3-4985-bf50-46a8c8bb8596",
+					"id": "9fdcf76c-5525-4a46-9923-21d4d45a2e1c",
 					"name": "Success",
 					"originalRequest": {
 						"method": "POST",
@@ -149,6 +150,7 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "html",
 					"header": [
 						{
 							"disabled": false,
@@ -190,7 +192,7 @@
 					"body": "{\n \"status\": \"success\",\n \"firstName\": \"Benjamin\",\n \"lastName\": \"Smith\",\n \"id\": \"0729d37c-ef9f-4ffa-8f71-a6eedf1f95b7\"\n}"
 				},
 				{
-					"id": "1611305c-e733-4f90-bd6b-c11102ca24f6",
+					"id": "e31deabb-3023-4093-b5e1-0bb816490eae",
 					"name": "Bad Request",
 					"originalRequest": {
 						"method": "POST",
@@ -234,6 +236,7 @@
 					"status": "Bad Request",
 					"code": 400,
 					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "Content-Type",
@@ -252,7 +255,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "47c431ad-69fb-4930-9a84-c25dfdd22b05",
+						"id": "0181ba65-a855-47aa-9435-0f1660764133",
 						"exec": [
 							"const res = pm.response.json();",
 							"const id = pm.globals.get('id');",
@@ -332,7 +335,7 @@
 					}
 				}
 			],
-			"id": "67041352-0945-451a-9400-a0164bda2445",
+			"id": "4c40550a-e2a4-4954-9e1c-cb572c6b90d5",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -359,7 +362,7 @@
 			},
 			"response": [
 				{
-					"id": "bd662a6a-d3f8-4940-ab65-b2e092c3d737",
+					"id": "fa9842b8-5776-49de-b693-60cd6a77f9a1",
 					"name": "List of users",
 					"originalRequest": {
 						"method": "GET",
@@ -383,6 +386,7 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "html",
 					"header": [
 						{
 							"disabled": false,
@@ -431,7 +435,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "54133d85-bf01-4fd9-b247-da2eaeb71def",
+						"id": "80d55ea2-f04e-45f5-8d58-3d490bf4fa00",
 						"exec": [
 							"const res = pm.response.json();",
 							"const id = pm.request.url.query.get('id');",
@@ -485,7 +489,7 @@
 					}
 				}
 			],
-			"id": "5ae60d9f-9d6b-4b93-bca2-38ee9dd44e6f",
+			"id": "aaece9c5-82bf-40fd-9a77-564062cd9e26",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -527,7 +531,7 @@
 			},
 			"response": [
 				{
-					"id": "c2a04543-1fe6-4c3d-a341-8a9bd001d7cd",
+					"id": "5888cc64-3f5c-46a0-84c5-499fbdffe966",
 					"name": "User updated",
 					"originalRequest": {
 						"method": "PUT",
@@ -567,6 +571,7 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "html",
 					"header": [
 						{
 							"disabled": false,
@@ -615,7 +620,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "d97c21d3-9fa2-488a-8f66-a0144bca18b0",
+						"id": "16e298c1-3f63-4155-bbc9-4365419483d3",
 						"exec": [
 							"const response = pm.response;",
 							"const id = pm.globals.get('id');",
@@ -655,7 +660,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "95469099-1537-4aef-bb53-207e3de1c0df",
+						"id": "a8ba9950-1f6b-46fe-a818-5fe431e348fd",
 						"exec": [
 							"const firstName = pm.variables.get('firstName');",
 							"const lastName = pm.variables.get('lastName');",
@@ -678,7 +683,7 @@
 					}
 				}
 			],
-			"id": "29abd7b7-0667-44a7-9088-42cfe46fd2c2",
+			"id": "0772c436-9576-42f7-84e4-312e4959648d",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -705,7 +710,7 @@
 			},
 			"response": [
 				{
-					"id": "e8268f57-54b3-4d84-b764-bcf57d8250fa",
+					"id": "639f9012-7729-41ac-b2f2-def17874bc0b",
 					"name": "User deleted",
 					"originalRequest": {
 						"method": "DELETE",
@@ -735,6 +740,7 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "html",
 					"header": [
 						{
 							"disabled": false,
@@ -782,7 +788,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "0e24122b-48ef-448a-af30-4b99d7738af4",
+				"id": "099ea01f-f244-4442-a7f1-a5effd088982",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -792,7 +798,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "4a581e63-de7e-4924-b3a8-c80ccf8dff93",
+				"id": "a814f5c7-fe90-4858-ac95-3f036b9d24d5",
 				"type": "text/javascript",
 				"exec": [
 					""
