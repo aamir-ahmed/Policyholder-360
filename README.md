@@ -1,1 +1,1 @@
-A basic user management API
+Policyholder360 API
