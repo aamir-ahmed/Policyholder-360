@@ -14,6 +14,6 @@ jobs:
         run: postman login --with-api-key ${{ secrets.POSTMAN_API_KEY }}
       - name: Run API tests
         run: |
-          postman collection run "${{ github.workspace }}/undefined/Policyholder 360.json" -e "16863297-e6ff3c40-5e1a-4061-9e21-e10657326768" --integration-id "147730-${{ github.run_id }}"
+          postman collection run "${{ github.workspace }}/postman/collections/Policyholder-360_5d94bf12-ca25-4683-88bc-6c6132d7e782.json" -e "16863297-e6ff3c40-5e1a-4061-9e21-e10657326768" --integration-id "175459-${{ github.run_id }}"
           # Lint your API using Postman CLI
-          postman api lint 1e10ef15-8ab2-4485-aa84-370363406c1c --integration-id 147730
+          postman api lint b8f55d95-c3ad-4f8e-8da1-ab812351be40 --integration-id 175459
