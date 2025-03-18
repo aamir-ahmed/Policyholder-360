@@ -1,35 +1,19 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
+name: Automated API tests using Postman CLI
 
-trigger:
-- main
+on: push
 
-pool:
-  vmImage: ubuntu-latest
-
-steps:
-- task: NodeTool@0
-  inputs:
-    versionSpec: '10.x'
-  displayName: 'Install Node.js'
-
-- script: |
-    npm install
-    npm run build
-    npm install -g newman
-    npm install -g newman-reporter-html
-    newman run "postman/collections/Policyholder-360_5d94bf12-ca25-4683-88bc-6c6132d7e782.json" -e "postman/Policyholder-Mock.postman_environment.json" --reporters cli,html
-  displayName: 'build with newman'
-- task: CopyFiles@2
-  inputs:
-    targetFolder: '$(Build.ArtifactStagingDirectory)'
-# Publish build artifacts
-# Publish build artifacts to Azure Pipelines or a Windows file share
-- task: PublishBuildArtifacts@1
-  inputs:
-    pathToPublish: '$(Build.ArtifactStagingDirectory)'
-    artifactName: 'Report'
-    publishLocation: 'Container'
-    #targetPath: # Required when publishLocation == FilePath
+jobs:
+  automated-api-tests:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Postman CLI
+        run: |
+          curl -o- "https://dl-cli.pstmn.io/install/osx_64.sh" | sh
+      - name: Login to Postman CLI
+        run: postman login --with-api-key ${{ secrets.POSTMAN_API_KEY }}
+      - name: Run API tests
+        run: |
+          postman collection run "${{ github.workspace }}/undefined/Policyholder 360.json" -e "16863297-e6ff3c40-5e1a-4061-9e21-e10657326768" --integration-id "147730-${{ github.run_id }}"
+          # Lint your API using Postman CLI
+          postman api lint 1e10ef15-8ab2-4485-aa84-370363406c1c --integration-id 147730
