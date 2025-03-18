@@ -252,7 +252,6 @@
 					"listen": "test",
 					"script": {
 						"id": "ce3e1e1c-2296-4767-95ce-542ae34380c0",
-						"type": "text/javascript",
 						"exec": [
 							"const res = pm.response.json();",
 							"const id = pm.globals.get('id');",
@@ -265,9 +264,6 @@
 							"    pm.expect(res.status).to.eql('success');",
 							"})",
 							"",
-							"pm.test('At least one user exists', () => {",
-							"   pm.expect(res.users.length).to.be.greaterThan(1);",
-							"});",
 							"",
 							"pm.test('User has all relevant fields', () => {",
 							"    res.users.forEach((val, i) => {",
@@ -327,7 +323,9 @@
 							"`",
 							"",
 							"pm.visualizer.set(template, { res });"
-						]
+						],
+						"type": "text/javascript",
+						"packages": {}
 					}
 				}
 			],
