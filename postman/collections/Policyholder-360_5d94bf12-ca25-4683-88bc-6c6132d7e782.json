@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "79574131-5dc2-41c1-b123-9f283155628e",
+		"_postman_id": "cb569855-5774-4a0e-b737-9712ac5b094c",
 		"name": "Policyholder-360",
 		"description": "This API is designed to show how you might mock, test document a new API. In this case, we're assuming that we're going to create a basic user management API.\n\nIt has basic CRUD operations listed below.\n\nHit the \"Run in Postman\" button to see the pre-request and test scripts powering this collection.\n\nTry running the collection through the Collection Runner to see how the mock allows us to scope out all our responses and write our tests in advance.\n\n## Summary\n\nHaving undergone the effort of building out our collection in Postman first:\n\n- Using Postman Mocks\n- Writing tests\n \nThis has allowed us to then build out our API to match, meaning we could:\n(Update the `url` in the environment to `http://localhost:3000` and run the following Node API: https://github.com/matt-ball/users-api)\n\n- Debug our API as it was being built\n- Ensure parity with our mocks, meeting the designed blueprint\n- Run tests against the API as it was being built so that it's watertight\n\nAs a result:\n\n- We now have a shareable collection for our API\n- We have beautiful, rich documentation showing how it works\n- We can run our collection in a fully automated fashion and attach it to our CI/CD pipeline\n- We can create a Postman Monitor with no added effort to check for responsiveness and correctness",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_uid": "16863297-79574131-5dc2-41c1-b123-9f283155628e"
+		"_uid": "16863297-cb569855-5774-4a0e-b737-9712ac5b094c"
 	},
 	"item": [
 		{
@@ -13,7 +13,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "71371d2b-080a-4891-af80-00592afb13b0",
+						"id": "c496c55f-fe5b-488e-99f9-26d30b2e0d8f",
 						"exec": [
 							"const res = pm.response.json();",
 							"const id = res.id;",
@@ -61,7 +61,7 @@
 					}
 				}
 			],
-			"id": "f718dd3d-2a26-469e-a37b-92e69d035985",
+			"id": "f87b04cd-7d58-4d7c-a4c1-e4a9297c014c",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -106,7 +106,7 @@
 			},
 			"response": [
 				{
-					"id": "d1c188e2-7577-4470-bec0-cb47adb2bf24",
+					"id": "ae2d35de-81ab-4796-b376-e327403d1c14",
 					"name": "Success",
 					"originalRequest": {
 						"method": "POST",
@@ -190,7 +190,7 @@
 					"body": "{\n \"status\": \"success\",\n \"firstName\": \"Benjamin\",\n \"lastName\": \"Smith\",\n \"id\": \"0729d37c-ef9f-4ffa-8f71-a6eedf1f95b7\"\n}"
 				},
 				{
-					"id": "681178e0-5f5a-4891-89b4-ae392c1e1c06",
+					"id": "36dfce20-ab82-4f29-a66b-88e278a289af",
 					"name": "Bad Request",
 					"originalRequest": {
 						"method": "POST",
@@ -251,7 +251,8 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "66b4f29b-b4e7-48e6-9f8e-ff7b2e61d518",
+						"id": "ce3e1e1c-2296-4767-95ce-542ae34380c0",
+						"type": "text/javascript",
 						"exec": [
 							"const res = pm.response.json();",
 							"const id = pm.globals.get('id');",
@@ -326,12 +327,11 @@
 							"`",
 							"",
 							"pm.visualizer.set(template, { res });"
-						],
-						"type": "text/javascript"
+						]
 					}
 				}
 			],
-			"id": "e2f89932-4f0f-45bc-8a55-34829ccb0479",
+			"id": "6435135e-c930-492b-9031-334cc92c30e6",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -358,7 +358,7 @@
 			},
 			"response": [
 				{
-					"id": "b97634d7-1992-464b-9ad8-c32e8572b2db",
+					"id": "4926616e-d487-4053-aea4-0196125fd51b",
 					"name": "List of users",
 					"originalRequest": {
 						"method": "GET",
@@ -385,33 +385,48 @@
 					"header": [
 						{
 							"disabled": false,
+							"description": {
+								"content": "",
+								"type": "text/plain"
+							},
 							"key": "X-Powered-By",
-							"value": "",
-							"description": ""
+							"value": ""
 						},
 						{
 							"disabled": false,
+							"description": {
+								"content": "",
+								"type": "text/plain"
+							},
 							"key": "Content-Length",
-							"value": "",
-							"description": ""
+							"value": ""
 						},
 						{
 							"disabled": false,
+							"description": {
+								"content": "",
+								"type": "text/plain"
+							},
 							"key": "ETag",
-							"value": "",
-							"description": ""
+							"value": ""
 						},
 						{
 							"disabled": false,
+							"description": {
+								"content": "",
+								"type": "text/plain"
+							},
 							"key": "Date",
-							"value": "",
-							"description": ""
+							"value": ""
 						},
 						{
 							"disabled": false,
+							"description": {
+								"content": "",
+								"type": "text/plain"
+							},
 							"key": "Connection",
-							"value": "",
-							"description": ""
+							"value": ""
 						},
 						{
 							"key": "Content-Type",
@@ -419,7 +434,7 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"status\": \"success\",\n    \"users\": [{\n        \"firstName\": \"Richard\",\n        \"lastName\": \"Dickens\",\n        \"id\": \"fab7b562-a339-4fdc-b299-7a6e7c31b4ff\"\n    }, {\n        \"firstName\": \"Edwin\",\n        \"lastName\": \"Schimmel\",\n        \"id\": \"8d918f30-ab1d-4a8d-b4a4-c129fbebe699\"\n    }]\n}\n"
+					"body": "[\n  {\n    \"status\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"id\": \"<string>\"\n  },\n  {\n    \"status\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"id\": \"<string>\"\n  }\n]"
 				}
 			]
 		},
@@ -429,7 +444,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "5c0a96dc-270a-42f4-ad69-e89f588762fe",
+						"id": "5b8a88df-cd0f-4070-be20-7ed10c4b7bb1",
 						"exec": [
 							"const res = pm.response.json();",
 							"const id = pm.request.url.query.get('id');",
@@ -481,7 +496,7 @@
 					}
 				}
 			],
-			"id": "c5721dfe-303f-41ff-8983-a31f3823e09d",
+			"id": "8f5c6773-d7e1-40a7-8c9d-ecbe787dbe76",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -523,7 +538,7 @@
 			},
 			"response": [
 				{
-					"id": "59545945-d1ca-48b1-b85b-c00484cd34e4",
+					"id": "38b2a727-c029-49b8-9a73-ffa24f9ccd47",
 					"name": "User updated",
 					"originalRequest": {
 						"method": "PUT",
@@ -603,180 +618,13 @@
 					"body": "{\n \"status\": \"success\",\n \"firstName\": \"Benjamin\",\n \"lastName\": \"Smith\",\n \"id\": \"0729d37c-ef9f-4ffa-8f71-a6eedf1f95b7\"\n}"
 				}
 			]
-		},
-		{
-			"name": "Delete user",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "f0019421-3c9a-4878-ac5a-09f08328c52b",
-						"exec": [
-							"const response = pm.response;",
-							"const id = pm.globals.get('id');",
-							"",
-							"pm.test('Status code is 200', () => {",
-							"    pm.response.to.have.status(200);",
-							"});",
-							"",
-							"pm.test('Operation is successful', () => {",
-							"    const res = response.json();",
-							"    pm.expect(res.status).to.eql('success');",
-							"});",
-							"",
-							"pm.test('User matches requested user', () => {",
-							"    const res = response.json();",
-							"    pm.globals.set(\"apiKey\", res.id);",
-							"    pm.expect(res.id).to.eql(id);",
-							"});",
-							"",
-							"pm.test('User can no longer be found', () => {",
-							"    pm.sendRequest({",
-							"        url: `${pm.environment.get('url')}/get?id=${id}`,",
-							"        header: 'x-mock-response-name:Get user by ID (no user found)',",
-							"        method: 'get'",
-							"    }, (err, res) => {",
-							"        res = res.json();",
-							"        pm.expect(res.error.header).to.eql('No matching response');",
-							"    });",
-							"});",
-							"",
-							"// cleanup",
-							"pm.globals.unset('id');"
-						],
-						"type": "text/javascript"
-					}
-				},
-				{
-					"listen": "prerequest",
-					"script": {
-						"id": "805b8586-9d6d-4beb-a2b2-7d9929917d75",
-						"exec": [
-							"const firstName = pm.variables.get('firstName');",
-							"const lastName = pm.variables.get('lastName');",
-							"const password = pm.variables.get('password');",
-							"",
-							"pm.sendRequest({",
-							"    url: `${pm.environment.get('url')}/create`,",
-							"    method: 'POST',",
-							"    header: 'Content-Type:application/x-www-form-urlencoded',",
-							"    body: {",
-							"        mode: 'raw',",
-							"        raw: `firstName=${firstName}&lastName=${lastName}&password=${password}`",
-							"    }",
-							"}, (err, res) => {",
-							"    res = res.json();",
-							"    pm.globals.set('id', res.id);",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"id": "d6ae90ab-6d18-4f6d-86e9-e9960c1ade5e",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "{{url}}/delete?id={{id}}",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"delete"
-					],
-					"query": [
-						{
-							"key": "id",
-							"value": "{{id}}",
-							"description": "(Required) The user's ID"
-						}
-					]
-				},
-				"description": "Deletes a user from the system by `id`."
-			},
-			"response": [
-				{
-					"id": "fbc9a83c-02aa-4b3b-b20b-160f71e08c66",
-					"name": "User deleted",
-					"originalRequest": {
-						"method": "DELETE",
-						"header": [
-							{
-								"description": "(Required) ",
-								"key": "Content-Type",
-								"value": "application/x-www-form-urlencoded"
-							}
-						],
-						"url": {
-							"raw": "{{url}}/delete?id={{id}}",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"delete"
-							],
-							"query": [
-								{
-									"key": "id",
-									"value": "{{id}}"
-								}
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"disabled": false,
-							"key": "X-Powered-By",
-							"value": "",
-							"description": ""
-						},
-						{
-							"disabled": false,
-							"key": "Content-Length",
-							"value": "",
-							"description": ""
-						},
-						{
-							"disabled": false,
-							"key": "ETag",
-							"value": "",
-							"description": ""
-						},
-						{
-							"disabled": false,
-							"key": "Date",
-							"value": "",
-							"description": ""
-						},
-						{
-							"disabled": false,
-							"key": "Connection",
-							"value": "",
-							"description": ""
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						}
-					],
-					"cookie": [],
-					"body": "{\n \"status\": \"success\",\n \"id\": \"0729d37c-ef9f-4ffa-8f71-a6eedf1f95b7\"\n}"
-				}
-			]
 		}
 	],
 	"event": [
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "8f46ba39-758c-49c4-a82f-865a04704d04",
+				"id": "57697141-b707-42e4-90f6-78f0d0690713",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -786,7 +634,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "5bcb4031-226b-4e8c-a96d-e1723e5eaf22",
+				"id": "82d0119f-edf3-460f-b4bc-b918ab349a28",
 				"type": "text/javascript",
 				"exec": [
 					""
